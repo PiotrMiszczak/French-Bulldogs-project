@@ -10,6 +10,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import "../css/main.scss"
 import "../css/normalize.css"
 import "../css/animation.css"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Header from "./header"
 import Footer from "./footer.js"
 
@@ -23,6 +25,9 @@ function Layout({ children }) {
       }
     }
   `)
+  
+
+  
 
   return (
     <>

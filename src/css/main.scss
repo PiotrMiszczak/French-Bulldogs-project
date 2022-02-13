@@ -21,6 +21,7 @@ html {
   align-items: center;
   margin: 0 auto;
   background-color: #141414;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.158);
 
   &__title {
     margin: 0;
@@ -36,6 +37,11 @@ html {
     color: white;
     text-decoration: none;
   }
+}
+.hello__slider{
+  width:100%;
+  overflow: hidden;
+  max-height: 650px;
 }
 .footer {
   width: 100%;
