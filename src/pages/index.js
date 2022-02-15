@@ -3,13 +3,13 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import SliderComponent from "../components/slider"
+import Hello from "../components/hello"
 
 const IndexPage = () => (
   <body>
   <Layout>
     <Seo title="Home" />
-    <SliderComponent />
+    <Hello />
   </Layout>
   </body>
 )

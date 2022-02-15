@@ -43,7 +43,7 @@ function SliderComponent(){
         infinite: true,
         speed: 1500,
         slidesToShow: 1,
-        autoplay:true,
+        
         autoplaySpeed:4000,
         slidesToScroll: 1,
         
@@ -53,7 +53,7 @@ function SliderComponent(){
       const image3 = getImage(images.image3)
   
     return(
-        <>
+        <div className="hello">
         <Slider className="hello__slider" {...settings}>
           <div>
             <GatsbyImage image={image1}/>
@@ -65,7 +65,15 @@ function SliderComponent(){
           <GatsbyImage image={image3}/>
           </div>
  </Slider>
-        </>
+ <div className="hello__mask">
+ </div>
+ <div className="hello__content">
+   <h2 className="hello__content-heading">French Bulldogs</h2>
+   <p className="hello__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+   <button className="hello__content-button">READ MORE</button>
+ </div>
+
+</div>
     )
 }
 
