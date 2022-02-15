@@ -4,6 +4,7 @@ html {
   font-size: 16px;
   box-sizing: border-box;
   font-family: "Roboto";
+  background-color:rgb(31, 30, 30);
 }
 
 *,
@@ -42,11 +43,16 @@ html {
   display: block;
   position: relative;
   z-index: 99;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%,0 95%);
+  
+  
 &__slider{
   width:100%;
   max-height: 650px;
   overflow: hidden;
+ 
   z-index: 99;
+  
 }
 &__mask{
   position: absolute;
@@ -63,6 +69,7 @@ background: linear-gradient(270deg, rgba(20,20,20,0) 40%, rgba(20,20,20,0.731530
   top: 4rem;
   left: 6rem;
   width: 30%;
+  min-width: 300px;
   
   color: white;
   z-index: 100;
@@ -76,8 +83,10 @@ background: linear-gradient(270deg, rgba(20,20,20,0) 40%, rgba(20,20,20,0.731530
     letter-spacing: 2px;
   }
   &-button{
+    display: inline-block;
     width: 8rem;
     margin-top: 2rem;
+    margin-right: 1rem;
     height: 3rem;
     border: 1px solid white;
     border-radius: 8px;
@@ -93,6 +102,43 @@ background: linear-gradient(270deg, rgba(20,20,20,0) 40%, rgba(20,20,20,0.731530
 
 }
 
+}
+.offer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 500px;
+  background-color: rgb(31, 30, 30);
+  &__item{
+    margin: 0.5rem;
+    background-color: rgb(236, 230, 230);
+    border-radius: 8px;
+    box-shadow: 8px 8px 8px 8px black;
+    flex-basis: 300px;
+    padding: 1rem;
+   
+    
+  }
+  &__heading{
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 2px;
+    & span{
+      letter-spacing: 4px;
+      font-style: italic;
+    }
+
+  }
+  &__icon{
+    width: 90%;
+    height: 200px;
+  }
+  &__text{
+    text-align: center;
+    font-weight: bolder;
+  }
+  
 }
 .footer {
   width: 100%;
