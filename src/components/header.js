@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => (
           />
         </svg>
       </Link>
-      <Link href="#" className="navigation__link link">
+      <Link href="/gallery" className="navigation__link link">
         Gallery
         <svg
           className="link__graphic link__graphic--stroke link__graphic--arc"

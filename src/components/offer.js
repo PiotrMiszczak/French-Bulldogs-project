@@ -5,6 +5,7 @@ import health from "../assets/health.svg"
 import travel from "../assets/travel.svg"
 import support from "../assets/support.svg"
 
+
 const Offer = () => (
   <section className="offer">
       <article className="offer__item">
