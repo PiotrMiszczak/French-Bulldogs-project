@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Satisfy&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @mixin button {
   margin-top: 2rem;
 
@@ -202,6 +202,90 @@ html {
     align-self: center;
   }
 }
+.dogs{
+  display: block;
+  color: white;
+  &__heading{
+    font-family: 'Satisfy';
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    text-align: center;
+    
+    margin-bottom: 2rem;
+  }
+&__article{
+  display: flex;
+  flex-direction: row;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  
+  
+}
+&__details{
+  display: flex;
+  align-items: center;
+  flex-basis: 30%;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  
+  
+}
+&__image{
+  flex-basis: 30%;
+  border-radius: 4px;
+
+}
+&__info{
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5rem 0 5rem 0;
+  &-decoration{
+    width: 4rem;
+    height: 4px;
+    background-color: white;
+  }
+  &-puppy{
+    justify-content: center;
+    padding: 0;
+  }
+}
+&__name{
+  font-family: 'Bebas Neue';
+  font-size: 5rem;
+  margin-top: 1.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: aqua;
+  &-female{
+    color: rgb(245, 161, 175);
+  }
+}
+&__breed{
+  font-family: 'Bebas Neue';
+  font-size: 2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  
+}
+&__button{
+@include button;
+width: 8rem;
+height: 3rem;
+margin-bottom: 2rem;
+
+  
+}
+&__price{
+ font-size: 2rem;
+ font-style: italic;
+  
+    
+  }
+
+}
 .gallery{
   padding: 1rem;
   
@@ -213,10 +297,53 @@ html {
 
   }}
 }
+
+.testimonials{ 
+  padding: 1rem;
+  &__item{
+    display: flex;
+    flex-direction: row;
+    justify-content:stretch;
+    background-color: #14141428;
+    margin-bottom: 2rem;
+    &-image{
+      width: 40%;
+      height: auto;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    &-content{
+      display: flex;
+     flex-direction: column;
+     justify-content: stretch;
+     flex-shrink: 3;
+     width: 60%;
+     padding:1rem;
+     color: white;
+     
+    }
+    &-heading{
+      text-align: center;
+      font-family: 'Satisfy';
+      
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+    &-text{
+      text-align: center;
+      
+      font-size: 1.5rem;
+      font-style: italic;
+      
+    }
+  }
+ 
+}
 .footer {
   width: 100%;
   height: 400px;
   padding-top: 1.5rem;
+  background-color: #141414;
   color: #e5e5e5;
 
   &__container {
@@ -264,46 +391,4 @@ html {
       font-weight: 200;
     }
   }
-}
-
-.testimonials{ 
-  padding: 1rem;
-  &__item{
-    display: flex;
-    flex-direction: row;
-    justify-content:stretch;
-    background-color: #14141428;
-    margin-bottom: 2rem;
-    &-image{
-      width: 40%;
-      height: auto;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-    &-content{
-      display: flex;
-     flex-direction: column;
-     justify-content: stretch;
-     flex-shrink: 3;
-     width: 60%;
-     padding:1rem;
-     color: white;
-     
-    }
-    &-heading{
-      text-align: center;
-      font-family: 'Satisfy';
-      
-      font-size: 2rem;
-      letter-spacing: 2px;
-    }
-    &-text{
-      text-align: center;
-      
-      font-size: 1.5rem;
-      font-style: italic;
-      
-    }
-  }
- 
 }
