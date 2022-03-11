@@ -7,7 +7,6 @@
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
-    "formik": "^2.2.9",
     "gatsby": "^4.6.2",
     "gatsby-plugin-gatsby-cloud": "^4.6.0",
     "gatsby-plugin-image": "^2.6.0",
@@ -17,12 +16,13 @@
     "gatsby-plugin-sass": "^5.7.0",
     "gatsby-plugin-sharp": "^4.6.0",
     "gatsby-source-filesystem": "^4.6.0",
-    "gatsby-theme-gallery": "^1.0.2",
     "gatsby-transformer-sharp": "^4.6.0",
     "prop-types": "^15.8.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-images": "^1.2.0-beta.7",
+    "react-photo-gallery": "^8.0.0",
     "react-slick": "^0.28.1",
     "sass": "^1.49.7",
     "slick-carousel": "^1.8.1"

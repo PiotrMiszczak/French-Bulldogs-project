@@ -6,7 +6,7 @@ import Seo from "../components/seo"
 import Hello from "../components/hello"
 import Offer from "../components/offer"
 import Form from "../components/form"
-import Testimonials from "../components/testimonials.js"
+
 
 
 const IndexPage = () => (
@@ -15,7 +15,7 @@ const IndexPage = () => (
     <Seo title="Home" />
     <Hello />
     <Offer />
-    <Testimonials />
+    
     
     <Form />
     

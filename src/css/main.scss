@@ -23,10 +23,6 @@ html {
   background-color: rgb(31, 30, 30);
  
 }
-main{
-  background-color: rgb(31, 30, 30);
-
-}
 
 *,
 *:before,
@@ -43,7 +39,7 @@ main{
   align-items: center;
   margin: 0 auto;
   background-color: #141414;
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.158);
+  
 
   &__title {
     margin: 0;
@@ -148,55 +144,7 @@ main{
     font-weight: bolder;
   }
 }
-.testimonials{
-  
-  
-  height: 500px;
-  background-color: #141414;
-  &__content{
-    display: flex;
-  justify-content: row;
-  justify-content: space-around;
 
-  }
-  &__heading{
-    margin: 0;
-    margin-bottom: 4rem;
-    font-weight: lighter;
-    font-size: 2rem;
-    text-align: center;
-  }
-  &__item{
-    position: relative;
-    width: 20rem;
-  }
-  &__decoration{
-    position: absolute;
-    
-    
-    &-black{
-      
-      top: 0;
-    left: 0;
-    width: 90%;
-    z-index: 1000;
-    }
-    &-purple{
-      width: 100%;
-    }
-    &-purple-center{
-      
-      width: 90%;
-      top: 0;
-    left: 1.25rem;
-  }
-  &-purple-left{
-  right: 2rem;
-
-}
-
-}
-}
 
 .form {
   display: flex;
@@ -207,7 +155,7 @@ main{
   margin: 0 auto;
   color: white;
   &__container{
-    background-color: rgb(31, 30, 30);
+   background-color: #141414;
   }
   
   &__wrapper {
@@ -256,6 +204,14 @@ main{
 }
 .gallery{
   padding: 1rem;
+  
+  & img{
+    transition: all 0.3s ease-in-out;
+    &:hover{
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+
+  }}
 }
 .footer {
   width: 100%;
@@ -308,4 +264,46 @@ main{
       font-weight: 200;
     }
   }
+}
+
+.testimonials{ 
+  padding: 1rem;
+  &__item{
+    display: flex;
+    flex-direction: row;
+    justify-content:stretch;
+    background-color: #14141428;
+    margin-bottom: 2rem;
+    &-image{
+      width: 40%;
+      height: auto;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    &-content{
+      display: flex;
+     flex-direction: column;
+     justify-content: stretch;
+     flex-shrink: 3;
+     width: 60%;
+     padding:1rem;
+     color: white;
+     
+    }
+    &-heading{
+      text-align: center;
+      font-family: 'Satisfy';
+      
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+    &-text{
+      text-align: center;
+      
+      font-size: 1.5rem;
+      font-style: italic;
+      
+    }
+  }
+ 
 }
