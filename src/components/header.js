@@ -5,7 +5,7 @@ const Header = ({ siteTitle }) => (
   <header className="header">
     <h1 className="header__title">{siteTitle}</h1>
     <nav className="navigation">
-      <Link href="#" className="navigation__link link">
+      <Link to="/dogs" className="navigation__link link">
         Dogs
         <svg
           className="link__graphic link__graphic--stroke link__graphic--arc"
@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => (
           />
         </svg>
       </Link>
-      <Link href="/gallery" className="navigation__link link">
+      <Link to="/gallery" className="navigation__link link">
         Gallery
         <svg
           className="link__graphic link__graphic--stroke link__graphic--arc"
@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => (
           />
         </svg>
       </Link>
-      <Link href="/testimonials" className="navigation__link link">
+      <Link to="/testimonials" className="navigation__link link">
         Testimonials
         <svg
           className="link__graphic link__graphic--stroke link__graphic--arc"

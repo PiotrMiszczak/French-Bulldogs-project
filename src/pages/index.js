@@ -9,7 +9,13 @@ import Form from "../components/form"
 
 
 
-const IndexPage = () => (
+function IndexPage(){ 
+  let textAreaValue=false;
+  
+  if(window.history.state && window.history.state.message){
+    textAreaValue=window.history.state.message}
+    
+  return(
   <body>
   <Layout>
     <Seo title="Home" />
@@ -17,10 +23,11 @@ const IndexPage = () => (
     <Offer />
     
     
-    <Form />
+    <Form text={textAreaValue} />
     
   </Layout>
   </body>
 )
+}
 
 export default IndexPage
