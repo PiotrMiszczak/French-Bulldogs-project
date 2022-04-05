@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Satisfy&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @mixin button {
@@ -15,12 +14,35 @@
     transition: all 0.1s linear;
   }
 }
+@mixin hamburger__inner{
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  left: 0;
+  top: 50%;
+}
+$screen-XS: 480px;
+$screen-S: 600px;
+$screen-M: 768px;
+$screen-L: 850px;
+$screen-XL: 1200px;
+$mainLighter:rgb(27, 27, 27);
+$mainDarker:#141414;
+$secondaryPurple:#6c63ffff;
+
 
 html {
-  font-size: 16px;
+  font-size: 18px;
   box-sizing: border-box;
   font-family: "Roboto";
-  background-color: rgb(31, 30, 30);
+  background-color: $mainLighter;
+  scroll-behavior: smooth;
+  @media(max-width:$screen-M){
+    font-size: 16px;
+
+  }
  
 }
 
@@ -28,6 +50,11 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+.stop-scrolling {
+  height: 100vh;
+  overflow: hidden;
+  
 }
 
 .header {
@@ -38,7 +65,10 @@ html {
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  background-color: #141414;
+  background-color: $mainDarker;
+  
+  
+  
   
 
   &__title {
@@ -55,6 +85,93 @@ html {
     color: white;
     text-decoration: none;
   }
+  &__button{
+   
+    background: transparent;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    
+
+    
+  
+    @media(min-width:$screen-S){
+      display: none;
+      
+      
+    }
+  }
+  &__hamburger{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+    
+    &-inner{
+    @include hamburger__inner;
+    transition: background-color .2s .1s ease-in-out;
+    ;
+    &::before{
+      @include hamburger__inner;
+      content: '';
+      transform: translateY(-10px);
+      transition: transform .2s .1s ease-in-out;
+    }
+    &::after{
+      @include hamburger__inner;
+      content: '';
+      transform: translateY(10px);
+      transition: transform .2s .1s ease-in-out;
+    }
+    }
+    
+  }
+  &__modal{
+    position: absolute;
+    position: fixed;
+    top:135px;
+    height: 100%;
+    left: 0;
+    z-index: 10000;
+    background-color: $mainDarker;
+    color: white;
+    width: 100%;
+    transform: translateX(10000px);
+    transition: transform .2s .1s ease-in;
+    &-active{
+      transform: translateX(0px);
+    }
+    @media(min-width:$screen-S){
+      display: none;
+      
+      
+    }
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 3rem;
+    list-style: none;
+    font-size: 2rem;
+    & li{
+      margin-bottom: 2rem;
+    }
+  }
+  @media(max-width:$screen-S){
+    display: none;
+    
+  }
+}
+.navigation__hamburger-active .navigation__hamburger-inner{
+  background-color: transparent;
+}
+.navigation__hamburger-active .navigation__hamburger-inner:after{
+  transform:  rotate(45deg);
+}
+.navigation__hamburger-active .navigation__hamburger-inner:before{
+  transform:  rotate(-45deg);
 }
 .hello {
   display: block;
@@ -83,10 +200,17 @@ html {
   }
   &__content {
     position: absolute;
-    top: 4rem;
+    top: 2rem;
     left: 6rem;
     width: 30%;
     min-width: 300px;
+    @media(max-width:$screen-L){
+      top: 2rem;
+      left: 3rem;
+      width: 50%;
+      left: 4rem;
+
+    }
 
     color: white;
     z-index: 100;
@@ -117,7 +241,7 @@ html {
   padding-bottom: 3rem;
   color: black;
 
-  background-color: #141414;
+  background-color: $mainLighter;
   &__item {
     flex-basis: 300px;
     margin: 0.5rem;
@@ -155,7 +279,7 @@ html {
   margin: 0 auto;
   color: white;
   &__container{
-   background-color: #141414;
+   background-color: $mainLighter;
   }
   
   &__wrapper {
@@ -181,14 +305,14 @@ html {
     margin-bottom: 1rem;
     height: 2.5rem;
     background: none;
-    border: 1px solid #6c63ffff;
+    border: 1px solid $secondaryPurple;
     color: white;
-    outline: #6c63ffff;
+    outline: $secondaryPurple;
     border-radius: 4px;
     padding: 4px;
     &:focus {
-      border: 1px solid #6c63ffff;
-      box-shadow: inset 0 0 3px #6c63ffff, 0 0 3px #6c63ffff;
+      border: 1px solid $secondaryPurple;
+      box-shadow: inset 0 0 3px $secondaryPurple, 0 0 3px $secondaryPurple;
     }
     &-textarea{
       min-height: 10rem;
@@ -196,7 +320,7 @@ html {
   }
   & option {
     color: white;
-    background-color: rgb(31, 30, 30);
+    background-color: $mainLighter
   }
   &__button {
     @include button;
@@ -307,7 +431,7 @@ margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
     justify-content:stretch;
-    background-color: #14141428;
+    background-color: $mainDarker;
     margin-bottom: 2rem;
     &-image{
       width: 40%;
@@ -346,7 +470,7 @@ margin-bottom: 2rem;
   width: 100%;
   height: 400px;
   padding-top: 1.5rem;
-  background-color: #141414;
+  background-color: $mainDarker;
   color: #e5e5e5;
 
   &__container {

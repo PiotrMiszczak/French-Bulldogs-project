@@ -56,13 +56,13 @@ function SliderComponent(){
         <div className="hello">
         <Slider className="hello__slider" {...settings}>
           <div>
-            <GatsbyImage image={image1}/>
+            <GatsbyImage alt="french bulldog" image={image1}/>
           </div>
           <div>
-          <GatsbyImage image={image2}/>
+          <GatsbyImage alt="french bulldog" image={image2}/>
           </div>
           <div>
-          <GatsbyImage image={image3}/>
+          <GatsbyImage alt="french bulldog" image={image3}/>
           </div>
  </Slider>
  <div className="hello__mask">
@@ -70,8 +70,8 @@ function SliderComponent(){
  <div className="hello__content">
    <h2 className="hello__content-heading">French Bulldogs</h2>
    <p className="hello__content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-   <button className="hello__content-button">READ MORE</button>
-   <Link href="#form"><button className="hello__content-button">GET PUPPY !</button></Link>
+   
+   <Link to="#form"><button className="hello__content-button">GET PUPPY !</button></Link>
  </div>
 
 </div>

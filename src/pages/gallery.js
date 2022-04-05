@@ -45,7 +45,7 @@ function GalleryPage(){
     setViewerIsOpen(false);
   };
   return (
-  <body>
+
   <Layout>
     <Seo title="Gallery" />
     <section className="gallery">
@@ -70,7 +70,7 @@ function GalleryPage(){
 </section>
     
   </Layout>
-  </body>
+  
 )}
 
 export default GalleryPage

@@ -9,7 +9,7 @@ function Form({text}) {
   return (
     <section className="form__container">
         <div className="form__wrapper">
-      <form id="form" className="form">
+      <form  className="form">
         
         <img className="form__icon" src={french} alt="french bulldog icon" />
         <legend className="form__legend">Join our waitlist!</legend>
@@ -30,18 +30,10 @@ function Form({text}) {
           <option value="6-12 months">6-12 months</option>
           <option value="year+">year+</option>
         </select>
-        <label className="form__label" htmlFor="sex">
-          Sex
-        </label>
-        <select className="form__input" name="sex" id="sex">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="both">Open to options</option>
-        </select>
         <label className="form__label" htmlFor="other">
           Any other information you want to share:
         </label>
-       <textarea defaultValue={text ? text : ''} className="form__input form__input-textarea" name="other" id="other"/>
+       <textarea  defaultValue={text ? text : ''} className="form__input form__input-textarea" name="other" id="other"/>
        <button className="form__button" type="submit">Send</button>
       </form>
       </div>

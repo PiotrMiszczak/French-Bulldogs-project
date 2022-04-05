@@ -1,7 +1,21 @@
-import * as React from "react"
+import React, {useState} from "react"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+
+function Header({ siteTitle }){
+  
+const [menu,setMenu] = useState(false);
+
+function handleClick(){
+  setMenu(!menu);
+  document.body.classList.toggle('stop-scrolling');
+  
+  
+
+}
+   
+  
+  return(
   <header className="header">
     <h1 className="header__title">{siteTitle}</h1>
     <nav className="navigation">
@@ -47,8 +61,24 @@ const Header = ({ siteTitle }) => (
           />
         </svg>
       </Link>
+  
+      
     </nav>
+    <button onClick={handleClick} className="navigation__button">
+<span className={menu ? "navigation__hamburger navigation__hamburger-active" :"navigation__hamburger"}>
+  <span className="navigation__hamburger-inner"> </span>
+</span>
+      </button>
+      <nav className={menu ? "navigation__modal navigation__modal-active":"navigation__modal"}>
+        <ul className="navigation__list">
+          <li onClick={handleClick}><Link to="/dogs" className="navigation__link link">Dogs</Link></li>
+          <li onClick={handleClick}><Link to="/gallery" className="navigation__link link">Gallery</Link></li>
+          <li onClick={handleClick}><Link to="/testimonials" className="navigation__link link">Testimonials</Link></li>
+        </ul>
+
+      </nav>
   </header>
 )
+  }
 
 export default Header

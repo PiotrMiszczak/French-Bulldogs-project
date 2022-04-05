@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 
 const TestimonialsPage = () => (
-  <body>
+  
   <Layout>
     <Seo title="Gallery" />
     <section className="testimonials">
@@ -39,7 +39,7 @@ const TestimonialsPage = () => (
 
     
   </Layout>
-  </body>
+  
 )
 
 export default TestimonialsPage

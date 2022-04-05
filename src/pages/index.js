@@ -16,7 +16,7 @@ function IndexPage(){
     textAreaValue=window.history.state.message}
     
   return(
-  <body>
+  
   <Layout>
     <Seo title="Home" />
     <Hello />
@@ -26,7 +26,7 @@ function IndexPage(){
     <Form text={textAreaValue} />
     
   </Layout>
-  </body>
+  
 )
 }
 

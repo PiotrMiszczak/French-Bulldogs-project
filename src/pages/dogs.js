@@ -11,7 +11,7 @@ function TestimonialsPage(){
     const [value,setValue] = React.useState('')
 
     const handleClick = (name)=>{
-       navigate("/#form",{state: {message:`Hello,
+       navigate("/#name",{state: {message:`Hello,
         
 I'm intrested in purchasing ${name}. I'm looking forward to our contact and getting more information.`,}})
         
@@ -22,7 +22,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
 */
     }
     return(
-  <body>
+  
   <Layout>
     <Seo title="Dogs" />
     <section className="dogs">
@@ -63,7 +63,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
             <div className="dogs__info-decoration"></div>
             <span className="dogs__name">Fedor</span>
             <span className="dogs__price">100 000$</span>
-            <button className="dogs__button" onClick={(e)=>handleClick('Fedor',e)}>I'm interested</button>
+            <button className="dogs__button" onClick={(e)=>handleClick('Fedor')}>I'm interested</button>
             <div className="dogs__info-decoration"></div>
         </div>
         <div className="dogs__details">
@@ -95,7 +95,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
 
     
   </Layout>
-  </body>
+ 
 )
 }
 export default TestimonialsPage
