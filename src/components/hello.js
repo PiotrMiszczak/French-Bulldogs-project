@@ -2,67 +2,35 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby"
 import Slider from "react-slick";
-import {GatsbyImage, getImage} from "gatsby-plugin-image"
+import {StaticImage} from "gatsby-plugin-image"
 
 function SliderComponent(){
-    const images = useStaticQuery(graphql`
-    query getImages {
-        image1: file(relativePath: { eq: "dog1.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-                quality: 100
-                layout: FULL_WIDTH
-                
-              )
-          }
-        }
-        image2: file(relativePath: { eq: "dog2.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-                quality: 100
-                layout: FULL_WIDTH
-                
-              )
-          }
-        }
-        image3: file(relativePath: { eq: "dog3.jpg" }) {
-            childImageSharp {
-              gatsbyImageData(
-                  quality: 100
-                  layout: FULL_WIDTH
-                  
-                )
-            }
-          }
-      }
-    `)
+    
     const settings = {
         dots: true,
-        adaptiveHeight:true,
+        adaptiveHeight:false,
         fade: true,
         infinite: true,
         speed: 1500,
         slidesToShow: 1,
-        initialSlide:2,
+        initialSlide:1,
         autoplaySpeed:4000,
         slidesToScroll: 1,
         
       };
-      const image1 = getImage(images.image1)
-      const image2 = getImage(images.image2)
-      const image3 = getImage(images.image3)
+      
   
     return(
         <div className="hello">
         <Slider className="hello__slider" {...settings}>
           <div>
-            <GatsbyImage alt="french bulldog" image={image1}/>
+            <StaticImage src="../images/dog22.jpg" />
           </div>
           <div>
-          <GatsbyImage alt="french bulldog" image={image2}/>
+          <StaticImage  className="hello__image" src="../images/dog22.jpg" />
           </div>
           <div>
-          <GatsbyImage alt="french bulldog" image={image3}/>
+          <StaticImage src="../images/dog22.jpg" />
           </div>
  </Slider>
  <div className="hello__mask">

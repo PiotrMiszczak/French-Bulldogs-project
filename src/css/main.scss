@@ -27,7 +27,8 @@ $screen-XS: 480px;
 $screen-S: 600px;
 $screen-M: 768px;
 $screen-L: 850px;
-$screen-XL: 1200px;
+$screen-XL: 1000px;
+$screen-XXL: 1200px;
 $mainLighter:rgb(27, 27, 27);
 $mainDarker:#141414;
 $secondaryPurple:#6c63ffff;
@@ -43,6 +44,10 @@ html {
     font-size: 16px;
 
   }
+  @media(max-width:$screen-S){
+    font-size: 14px;
+    
+   }
  
 }
 
@@ -136,9 +141,10 @@ html {
     background-color: $mainDarker;
     color: white;
     width: 100%;
-    transform: translateX(10000px);
-    transition: transform .2s .1s ease-in;
+    transform: translateX(1000px);
+    transition: transform .5s .1s ease-in-out;
     &-active{
+      transition: transform .5s .1s ease-in-out;
       transform: translateX(0px);
     }
     @media(min-width:$screen-S){
@@ -173,21 +179,34 @@ html {
 .navigation__hamburger-active .navigation__hamburger-inner:before{
   transform:  rotate(-45deg);
 }
+.slick-list{
+  height: 100% !important;
+  width: 100%;
+}
+
+.gatsby-image-wrapper{
+  display: block !important;
+}
 .hello {
   display: block;
   position: relative;
   z-index: 99;
+  height: 100%;
+  max-height: 900px;
+  
   
   &__slider {
     width: 100%;
-    max-height: 650px;
+    height: 100%;
+    max-height: 900px;
     overflow: hidden;
     z-index: 99;
   }
+  
   &__mask {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100.1%;
     top: 0;
     left: 0;
     z-index: 100;
@@ -208,8 +227,13 @@ html {
       top: 2rem;
       left: 3rem;
       width: 50%;
-      left: 4rem;
-
+      
+    }
+    @media(max-width:$screen-S){
+      top: .5rem;
+      left: .5rem;
+      width: 70%;
+     
     }
 
     color: white;
@@ -217,6 +241,10 @@ html {
     &-heading {
       margin-bottom: 1rem;
       font-size: 4rem;
+      @media(max-width:$screen-S){
+       margin-top:.5rem;
+       
+      }
     }
     &-text {
       font-weight: lighter;
@@ -237,10 +265,11 @@ html {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding-top: 6rem;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+  padding-top: 4rem;
   padding-bottom: 3rem;
   color: black;
-
   background-color: $mainLighter;
   &__item {
     flex-basis: 300px;
@@ -345,8 +374,19 @@ html {
   flex-direction: row;
   padding-right: 2rem;
   margin-bottom: 1rem;
+  @media(max-width:$screen-XL){
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+  }
   
   
+}
+&__text{
+  @media(max-width:$screen-XL){
+   text-align: center;
+  }
+
 }
 &__details{
   display: flex;
@@ -358,17 +398,23 @@ html {
   
 }
 &__image{
-  flex-basis: 30%;
+  max-width:400px;
+  flex-grow: 0;
+	flex-shrink: 0;
+
   border-radius: 4px;
+  
 
 }
+
 &__info{
   flex-basis: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding: 5rem 0 5rem 0;
+ 
   &-decoration{
     width: 4rem;
     height: 4px;
@@ -391,6 +437,7 @@ html {
   }
 }
 &__breed{
+  margin-bottom: 1.5rem;
   font-family: 'Bebas Neue';
   font-size: 2rem;
   letter-spacing: 3px;
