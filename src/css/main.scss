@@ -218,6 +218,9 @@ html {
     );
   }
   &__content {
+    @media(max-width:$screen-XS){
+      display: none;
+    }
     position: absolute;
     top: 2rem;
     left: 6rem;
@@ -258,6 +261,9 @@ html {
 
       margin-right: 1rem;
     }
+  }
+  &-modal{
+    display: none;
   }
 }
 .offer {
@@ -401,6 +407,7 @@ html {
   max-width:400px;
   flex-grow: 0;
 	flex-shrink: 0;
+  margin-bottom:1rem;
 
   border-radius: 4px;
   
@@ -480,13 +487,25 @@ margin-bottom: 2rem;
     justify-content:stretch;
     background-color: $mainDarker;
     margin-bottom: 2rem;
+    @media(max-width:$screen-M){
+      flex-direction: column;
+      align-items: center;
+    }
     &-image{
+      @media(max-width:$screen-M){
+        width: 100%;
+        max-width: 400px;
+      }
       width: 40%;
       height: auto;
+      margin-top: 1rem;
       border-radius: 4px;
       flex-shrink: 0;
     }
     &-content{
+      @media(max-width:$screen-M){
+        width: 100%;
+      }
       display: flex;
      flex-direction: column;
      justify-content: stretch;
@@ -515,7 +534,6 @@ margin-bottom: 2rem;
 }
 .footer {
   width: 100%;
-  height: 400px;
   padding-top: 1.5rem;
   background-color: $mainDarker;
   color: #e5e5e5;
@@ -530,8 +548,13 @@ margin-bottom: 2rem;
       border-bottom: 1px solid #ffffff1c;
       padding-bottom: 1.5rem;
       padding-right: 7rem;
+      @media(max-width:$screen-S){
+        padding-right: 1rem;
+      }
     }
     &-bottom {
+      column-gap: 1rem;
+      flex-wrap: wrap;
       margin-right: 15rem;
       margin-top: 3rem;
     }
@@ -556,6 +579,9 @@ margin-bottom: 2rem;
   }
   &__section {
     flex-basis: 200px;
+    flex-grow: 0;
+	flex-shrink: 0;
+  
     font-size: 0.85rem;
     line-height: 1.5rem;
     & h3 {

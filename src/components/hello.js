@@ -42,6 +42,7 @@ function SliderComponent(){
    <Link to="#form"><button className="hello__content-button">GET PUPPY !</button></Link>
  </div>
 
+
 </div>
     )
 }
