@@ -216,6 +216,9 @@ html {
       rgba(20, 20, 20, 0) 40%,
       rgba(20, 20, 20, 0.7315301120448179) 70%
     );
+    @media(max-width:$screen-XS){
+      display: none;
+    }
   }
   &__content {
     @media(max-width:$screen-XS){

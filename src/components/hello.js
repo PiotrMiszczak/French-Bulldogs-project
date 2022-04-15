@@ -11,9 +11,9 @@ function SliderComponent(){
         adaptiveHeight:false,
         fade: true,
         infinite: true,
-        speed: 1500,
+        autoplay:true,
         slidesToShow: 1,
-        initialSlide:1,
+        initialSlide:0,
         autoplaySpeed:4000,
         slidesToScroll: 1,
         
@@ -24,14 +24,12 @@ function SliderComponent(){
         <div className="hello">
         <Slider className="hello__slider" {...settings}>
           <div>
-            <StaticImage src="../images/dog22.jpg" />
+            <StaticImage className="hello__image" src="../images/dog22.jpg" />
           </div>
           <div>
-          <StaticImage  className="hello__image" src="../images/dog22.jpg" />
+          <StaticImage  className="hello__image" src="../images/dog1.jpg" />
           </div>
-          <div>
-          <StaticImage src="../images/dog22.jpg" />
-          </div>
+         
  </Slider>
  <div className="hello__mask">
  </div>

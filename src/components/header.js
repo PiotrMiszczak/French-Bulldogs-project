@@ -17,7 +17,7 @@ function handleClick(){
   
   return(
   <header className="header">
-    <h1 className="header__title">{siteTitle}</h1>
+    <Link className="link" to="/"><h1 className="header__title">{siteTitle}</h1></Link>
     <nav className="navigation">
       <Link to="/dogs" className="navigation__link link">
         Dogs
