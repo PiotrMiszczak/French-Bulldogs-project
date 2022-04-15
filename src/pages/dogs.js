@@ -29,7 +29,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
         <section>
         <h2 className="dogs__heading">Parents</h2>
         <article className="dogs__article">
-        <StaticImage className="dogs__image" objectPosition={"50% 50%"} src="../images/dog1c.jpg" />
+        <StaticImage className="dogs__image" objectPosition={"50% 50%"} src="../images/dog2.jpg" />
         <div className="dogs__info">
             <div className="dogs__info-decoration"></div>
             <span className="dogs__name">Fedor</span>
@@ -42,7 +42,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
         </div>
         </article>
         <article className="dogs__article">
-        <StaticImage className="dogs__image" src="../images/dog1c.jpg" />
+        <StaticImage className="dogs__image" src="../images/dog2.jpg" />
         <div className="dogs__info">
             <div className="dogs__info-decoration"></div>
             <span className=" dogs__name dogs__name-female">Fedorina</span>
@@ -56,7 +56,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
         </article>
         <h2 className="dogs__heading">Puppies</h2>
         <article className="dogs__article">
-        <StaticImage className="dogs__image" src="../images/dog1c.jpg" />
+        <StaticImage className="dogs__image" src="../images/dog2.jpg" />
         <div className="dogs__info dogs__info-puppy">
             <div className="dogs__info-decoration"></div>
             <span className="dogs__name">Fedor</span>
@@ -70,7 +70,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
         </div>
         </article>
         <article className="dogs__article">
-        <StaticImage className="dogs__image" src="../images/dog1c.jpg" />
+        <StaticImage className="dogs__image" src="../images/dog2.jpg" />
         <div className="dogs__info dogs__info-puppy">
             <div className="dogs__info-decoration"></div>
             <span className="dogs__name">Waldek</span>
