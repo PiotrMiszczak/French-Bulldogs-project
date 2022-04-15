@@ -11,8 +11,9 @@ import Form from "../components/form"
 
 function IndexPage(){ 
   let textAreaValue=false;
+  const isBrowser = () => typeof window !== "undefined"
   
-  if(window.history.state && window.history.state.message){
+  if(isBrowser() && window.history.state && window.history.state.message){
     textAreaValue=window.history.state.message}
     
   return(
