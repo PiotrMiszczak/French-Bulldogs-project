@@ -9,7 +9,7 @@ function Form({text}) {
   return (
     <section className="form__container">
         <div className="form__wrapper">
-      <form  className="form">
+      <form id="form"  className="form">
         
         <img className="form__icon" src={french} alt="french bulldog icon" />
         <legend className="form__legend">Join our waitlist!</legend>

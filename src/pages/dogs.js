@@ -62,7 +62,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
             <span className="dogs__name">Fedor</span>
             <span className="dogs__price">100 000$</span>
             <button className="dogs__button" onClick={(e)=>handleClick('Fedor')}>I'm interested</button>
-            <div className="dogs__info-decoration"></div>
+            
         </div>
         <div className="dogs__details">
             <p className="dogs__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -76,7 +76,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
             <span className="dogs__name">Waldek</span>
             <span className="dogs__price">1000$</span>
             <button className="dogs__button" onClick={(e)=>handleClick('Waldek','F',e)}>I'm interested</button>
-            <div className="dogs__info-decoration"></div>
+            
         </div>
         <div className="dogs__details">
             <p className="dogs__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
