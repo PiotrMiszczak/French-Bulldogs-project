@@ -144,10 +144,10 @@ html {
     background-color: $mainDarker;
     color: white;
     width: 100%;
-    transform: translateX(1000px);
-    transition: transform .5s .1s ease-in-out;
+    transform: translateX(100%);
+    transition: transform .3s  ease-in-out;
     &-active{
-      transition: transform .5s .1s ease-in-out;
+      transition: transform .3s  ease-in-out;
       transform: translateX(0px);
     }
     @media(min-width:$screen-S){
@@ -162,6 +162,7 @@ html {
     justify-content: space-around;
     align-items: center;
     padding-top: 3rem;
+    padding-left: 0;
     list-style: none;
     font-size: 2rem;
     & li{
