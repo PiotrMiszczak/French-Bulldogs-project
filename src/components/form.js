@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React, { useState,useLayoutEffect,useRef } from "react"
 import french from "../assets/french.svg"
 import axios from "axios"
 import qs from 'qs'
@@ -8,26 +7,31 @@ function Form({ text }) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [timeFrame, setTimeFrame] = useState("asap")
-  const [other, setOther] = useState("")
+  const [other, setOther] = useState(text ? text :'')
+  const [feedback, setFeedback] = useState('')
+  const feedbackRef = useRef()
 
+//////////////////////API COMMUNICATION ////////////////////////////
   const postRequest = async (message) => {
-    console.log(message)
-
+  
     try {
-      console.log("próbuje")
+      
       const resp = await axios.post(
-        "https://majestic-dry-tortugas-10325.herokuapp.com/",message
+        "https://majestic-dry-tortugas-10325.herokuap.com/",message
         
         
       )
-      console.log(resp)
+      resp.data.success==true ? setFeedback("success") : setFeedback("error")
     } catch (err) {
-      console.log(err)
+      
+      setFeedback("error")
+      
     }
   }
+  
 
   const sendMail = e => {
-    console.log("klikam")
+    
     e.preventDefault()
     const mail = qs.stringify({
       name,
@@ -37,6 +41,24 @@ function Form({ text }) {
     })
     postRequest(mail)
   }
+//////////////////////FEEDBACK ANIMATION////////////////////////////
+useLayoutEffect(()=>{
+  if(feedback!==''){
+ 
+ setTimeout(()=>{
+  feedbackRef.current.classList.add('form__feedback-onExit')
+
+
+ },2500) 
+ 
+setTimeout(()=>{
+  feedbackRef.current.classList.remove("form__feedback-good","form__feedback-bad","form__feedback-onExit")
+  feedbackRef.current.classList.add('hidden')
+ setFeedback('')
+ },4000)
+
+
+}},[feedback])
 
   return (
     <section className="form__container">
@@ -95,9 +117,11 @@ function Form({ text }) {
             value={other}
             onChange={event => setOther(event.target.value)}
           />
+          
           <button className="form__button" type="submit">
             Send
           </button>
+          <span ref={feedbackRef} className={feedback=='' ? "form__feedback hidden" : feedback=='success' ? "form__feedback form__feedback-good" : "form__feedback form__feedback-bad"}>{feedback=='success' ? "Your message has been sent succesfully ;)" : "Oops, something went wrong. Contact us on social media"}</span>
         </form>
       </div>
     </section>
