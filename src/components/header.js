@@ -1,5 +1,8 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
+import { changeLocale } from "gatsby-plugin-intl"
+import us from "../assets/us.svg"
+import LocaleButton from "./localeButton"
 
 
 function Header({ siteTitle }){
@@ -10,8 +13,6 @@ function handleClick(){
   setMenu(!menu);
   document.body.classList.toggle('stop-scrolling');
   
-  
-
 }
    
   
@@ -61,6 +62,7 @@ function handleClick(){
           />
         </svg>
       </Link>
+      <LocaleButton />
   
       
     </nav>
@@ -75,6 +77,7 @@ function handleClick(){
           <li onClick={handleClick}><Link to="/gallery" className="navigation__link link">Gallery</Link></li>
           <li onClick={handleClick}><Link to="/testimonials" className="navigation__link link">Testimonials</Link></li>
         </ul>
+        <LocaleButton  onClick={handleClick}/>
 
       </nav>
   </header>

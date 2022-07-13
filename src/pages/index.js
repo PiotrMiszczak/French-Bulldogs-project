@@ -1,15 +1,17 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Hello from "../components/hello"
 import Offer from "../components/offer"
 import Form from "../components/form"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
 
 
 function IndexPage(){ 
+
+  const intl = useIntl();
+ 
   let textAreaValue=false;
   const isBrowser = () => typeof window !== "undefined"
   
@@ -19,7 +21,7 @@ function IndexPage(){
   return(
   
   <Layout>
-    <Seo title="Home" />
+    <Seo title={intl.formatMessage({ id: "title" })} />
     <Hello />
     <Offer />
     
