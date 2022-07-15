@@ -9,6 +9,13 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+
+
+
+
+
+  
 
 function Seo({ description, lang, meta, title }) {
     const { site } = useStaticQuery(
@@ -24,9 +31,10 @@ function Seo({ description, lang, meta, title }) {
       }
     `
     )
-
+    const intl = useIntl();
     const metaDescription = description || site.siteMetadata.description
-    const defaultTitle = site.siteMetadata?.title
+    const defaultTitle=intl.formatMessage({ id: "defaultTitle" })
+    
 
     return ( <
         Helmet htmlAttributes = {
@@ -34,8 +42,8 @@ function Seo({ description, lang, meta, title }) {
                 lang,
             }
         }
-        title = { title }
-        titleTemplate = { defaultTitle ? `%s | ${defaultTitle}` : null }
+        title = { title ? `${title} | ${defaultTitle}`:defaultTitle }
+        
         meta = {
             [{
                     name: `description`,

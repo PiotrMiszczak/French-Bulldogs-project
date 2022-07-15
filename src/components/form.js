@@ -1,64 +1,63 @@
-import React, { useState,useLayoutEffect,useRef } from "react"
+import FeedbackSpinner from "./feedbackSpinner"
+import React, { useState, useLayoutEffect, useRef } from "react"
 import french from "../assets/french.svg"
 import axios from "axios"
-import qs from 'qs'
+import qs from "qs"
 
 function Form({ text }) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [timeFrame, setTimeFrame] = useState("asap")
-  const [other, setOther] = useState(text ? text :'')
-  const [feedback, setFeedback] = useState('')
+  const [other, setOther] = useState(text ? text : "")
+  const [feedback, setFeedback] = useState("")
+  const [inProgress, setInProgress] = useState(false)
   const feedbackRef = useRef()
 
-//////////////////////API COMMUNICATION ////////////////////////////
-  const postRequest = async (message) => {
-  
+  //////////////////////API COMMUNICATION ////////////////////////////
+  const postRequest = async message => {
     try {
-      
+      setInProgress(true)
+
       const resp = await axios.post(
-        "https://majestic-dry-tortugas-10325.herokuap.com/",message
-        
-        
+        "https://majestic-dry-tortugas-10325.herokuapp.com/",
+        message
       )
-      resp.data.success==true ? setFeedback("success") : setFeedback("error")
+      resp.data.success == true ? setFeedback("success") : setFeedback("error")
+      setInProgress(false)
     } catch (err) {
-      
       setFeedback("error")
-      
+      setInProgress(false)
     }
   }
-  
 
   const sendMail = e => {
-    
     e.preventDefault()
     const mail = qs.stringify({
       name,
       email,
       timeFrame,
-      other
+      other,
     })
     postRequest(mail)
   }
-//////////////////////FEEDBACK ANIMATION////////////////////////////
-useLayoutEffect(()=>{
-  if(feedback!==''){
- 
- setTimeout(()=>{
-  feedbackRef.current.classList.add('form__feedback-onExit')
+  //////////////////////FEEDBACK ANIMATION////////////////////////////
+  useLayoutEffect(() => {
+    if (feedback !== "") {
+      setTimeout(() => {
+        feedbackRef.current.classList.add("form__feedback-onExit")
+      }, 2500)
 
-
- },2500) 
- 
-setTimeout(()=>{
-  feedbackRef.current.classList.remove("form__feedback-good","form__feedback-bad","form__feedback-onExit")
-  feedbackRef.current.classList.add('hidden')
- setFeedback('')
- },4000)
-
-
-}},[feedback])
+      setTimeout(() => {
+        feedbackRef.current.classList.remove(
+          "form__feedback-good",
+          "form__feedback-bad",
+          "form__feedback-onExit"
+        )
+        feedbackRef.current.classList.add("hidden")
+        setFeedback("")
+      }, 4000)
+    }
+  }, [feedback])
 
   return (
     <section className="form__container">
@@ -117,11 +116,25 @@ setTimeout(()=>{
             value={other}
             onChange={event => setOther(event.target.value)}
           />
-          
+
           <button className="form__button" type="submit">
             Send
           </button>
-          <span ref={feedbackRef} className={feedback=='' ? "form__feedback hidden" : feedback=='success' ? "form__feedback form__feedback-good" : "form__feedback form__feedback-bad"}>{feedback=='success' ? "Your message has been sent succesfully ;)" : "Oops, something went wrong. Contact us on social media"}</span>
+          <span
+            ref={feedbackRef}
+            className={
+              feedback == ""
+                ? "form__feedback hidden"
+                : feedback == "success"
+                ? "form__feedback form__feedback-good"
+                : "form__feedback form__feedback-bad"
+            }
+          >
+            {feedback == "success"
+              ? "Your message has been sent succesfully ;)"
+              : "Oops, something went wrong. Contact us on social media"}
+          </span>
+          <FeedbackSpinner visible={inProgress} />
         </form>
       </div>
     </section>

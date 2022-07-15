@@ -21,7 +21,7 @@ function IndexPage(){
   return(
   
   <Layout>
-    <Seo title={intl.formatMessage({ id: "title" })} />
+    <Seo />
     <Hello />
     <Offer />
     
