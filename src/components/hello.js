@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { useStaticQuery, graphql } from "gatsby"
+
 import Slider from "react-slick";
 import {StaticImage} from "gatsby-plugin-image"
-import { changeLocale } from "gatsby-plugin-intl"
+
 
 function SliderComponent(){
     
@@ -25,10 +25,10 @@ function SliderComponent(){
         <div className="hello">
         <Slider className="hello__slider" {...settings}>
           <div>
-            <StaticImage className="hello__image" src="../images/dog22.jpg" />
+            <StaticImage className="hello__image" src="../images/dog22.jpg" alt="french bulldog" />
           </div>
           <div>
-          <StaticImage  className="hello__image" src="../images/dog1.jpg" />
+          <StaticImage  className="hello__image" src="../images/dog1.jpg" alt="french bulldog" />
           </div>
          
  </Slider>

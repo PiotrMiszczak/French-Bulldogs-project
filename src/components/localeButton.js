@@ -1,12 +1,11 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { useIntl, changeLocale } from "gatsby-plugin-intl"
 import us from "../assets/us.svg"
 import ua from "../assets/ua.svg"
 
 function LocaleButton() {
   const intl = useIntl()
-  const { locale: lang, messages } = intl
+  const { locale: lang } = intl
   console.log(lang)
 
   return (

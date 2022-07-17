@@ -4,14 +4,16 @@ import french from "../assets/french.svg"
 import axios from "axios"
 import qs from "qs"
 
+
 function Form({ text }) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [timeFrame, setTimeFrame] = useState("asap")
-  const [other, setOther] = useState(text ? text : "")
   const [feedback, setFeedback] = useState("")
   const [inProgress, setInProgress] = useState(false)
   const feedbackRef = useRef()
+  const textareaRef = useRef()
+ 
 
   //////////////////////API COMMUNICATION ////////////////////////////
   const postRequest = async message => {
@@ -36,7 +38,7 @@ function Form({ text }) {
       name,
       email,
       timeFrame,
-      other,
+      other: textareaRef.value
     })
     postRequest(mail)
   }
@@ -109,12 +111,12 @@ function Form({ text }) {
             Any other information you want to share:
           </label>
           <textarea
+          ref={textareaRef}
             defaultValue={text ? text : ""}
             className="form__input form__input-textarea"
             name="other"
             id="other"
-            value={other}
-            onChange={event => setOther(event.target.value)}
+            
           />
 
           <button className="form__button" type="submit">

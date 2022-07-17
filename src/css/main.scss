@@ -33,9 +33,6 @@ $mainLighter: rgb(27, 27, 27);
 $mainDarker: #141414;
 $secondaryPurple: #6c63ffff;
 
-html:focus-within {
-  scroll-behavior: smooth;
-}
 html {
   font-size: 18px;
   box-sizing: border-box;

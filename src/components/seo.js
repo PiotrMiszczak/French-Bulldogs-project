@@ -9,7 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+import { useIntl} from "gatsby-plugin-intl"
 
 
 

@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { changeLocale } from "gatsby-plugin-intl"
-import us from "../assets/us.svg"
 import LocaleButton from "./localeButton"
 
 function Header({ siteTitle }) {

@@ -11,7 +11,7 @@ const TestimonialsPage = () => (
     <Seo title="Gallery" />
     <section className="testimonials">
         <article className="testimonials__item">
-        <StaticImage className="testimonials__item-image" src="../assets/testimonials.jpg" />
+        <StaticImage className="testimonials__item-image" src="../assets/testimonials.jpg" alt="woman with a dog" />
         <div className="testimonials__item-content">
             <h2 className="testimonials__item-heading">Kateryna</h2>
             <p className="testimonials__item-text">I recommend, very very great. Awesome. Great expierence, Fedor is the cutest.</p>
@@ -19,7 +19,7 @@ const TestimonialsPage = () => (
 
         </article>
         <article className="testimonials__item">
-        <StaticImage className="testimonials__item-image" src="../assets/testimonials2.jpg" />
+        <StaticImage className="testimonials__item-image" src="../assets/testimonials2.jpg" alt="woman with a dog" />
         <div className="testimonials__item-content">
             <h2 className="testimonials__item-heading">Piotr</h2>
             <p className="testimonials__item-text">I recommend, very very great. Awesome. Great expierence, Fedor is the cutest.</p>
@@ -27,7 +27,7 @@ const TestimonialsPage = () => (
 
         </article>
         <article className="testimonials__item">
-        <StaticImage className="testimonials__item-image" src="../assets/testimonials.jpg" />
+        <StaticImage className="testimonials__item-image" src="../assets/testimonials.jpg" alt="woman with a dog" />
         <div className="testimonials__item-content">
             <h2 className="testimonials__item-heading">Kateryna</h2>
             <p className="testimonials__item-text">I recommend, very very great. Awesome. Great expierence, Fedor is the cutest.</p>
