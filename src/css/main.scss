@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 @mixin button {
   margin-top: 2rem;
 
@@ -481,15 +482,14 @@ html {
     font-style: italic;
   }
 }
-.gallery {
-  padding: 1rem;
-
-  & img {
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      transform: scale(1.02);
-      transition: all 0.3s ease-in-out;
-    }
+.gallery{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  &_header{
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 3px;
   }
 }
 

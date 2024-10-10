@@ -12,6 +12,7 @@ import "../css/normalize.css"
 import "../css/animation.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-image-gallery/styles/scss/image-gallery.scss";
 import Header from "./header"
 import Footer from "./footer.js"
 
