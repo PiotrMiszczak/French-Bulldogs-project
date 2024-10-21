@@ -5,6 +5,7 @@ import axios from "axios"
 import qs from "qs"
 
 
+
 function Form({ text }) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -16,15 +17,18 @@ function Form({ text }) {
  
 
   //////////////////////API COMMUNICATION ////////////////////////////
-  const postRequest = async message => {
+  const postRequest = async (message,username,password) => {
     try {
       setInProgress(true)
+      
+      const authString = username+":"+password
+      const authBase64 = btoa(authString);
 
       const resp = await axios.post(
-        "https://majestic-dry-tortugas-10325.herokuapp.com/",
-        message
+        process.env.GATSBY_MAILSERVER_ENDPOINT,
+        message,{headers:{Authorization:"Basic "+authBase64}}
       )
-      resp.data.success == true ? setFeedback("success") : setFeedback("error")
+      resp.status == 200 ? setFeedback("success") : setFeedback("error")
       setInProgress(false)
     } catch (err) {
       setFeedback("error")
@@ -40,7 +44,7 @@ function Form({ text }) {
       timeFrame,
       other: textareaRef.value
     })
-    postRequest(mail)
+    postRequest(mail,process.env.GATSBY_MAILSERVER_USER,process.env.GATSBY_MAILSERVER_PASSWORD)
   }
   //////////////////////FEEDBACK ANIMATION////////////////////////////
   useLayoutEffect(() => {

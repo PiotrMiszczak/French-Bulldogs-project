@@ -71,11 +71,6 @@ function Header({ siteTitle }) {
             </Link>
           </li>
           <li onClick={handleClick}>
-            <Link to="/gallery" className="navigation__link link">
-              Gallery
-            </Link>
-          </li>
-          <li onClick={handleClick}>
             <Link to="/testimonials" className="navigation__link link">
               Testimonials
             </Link>
