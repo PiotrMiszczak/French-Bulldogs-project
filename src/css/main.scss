@@ -85,6 +85,9 @@ html {
     color: white;
     font-family: "Amatic SC";
     font-size: 3rem;
+     @media (max-width: $screen-S) {
+    font-size: 2.5rem;
+    }
     
   }
 }
@@ -107,7 +110,7 @@ html {
     @media (max-width: $screen-S) {
       display: block;
       margin: 0 auto;
-      margin-top: 10rem;
+      margin-top: 2rem;
     }
 
     & img {
@@ -434,6 +437,7 @@ html {
     display: flex;
     flex-direction: row;
     padding-right: 2rem;
+     padding-left: 2rem;
     margin-bottom: 6rem;
     @media (max-width: $screen-XL) {
       flex-direction: column;

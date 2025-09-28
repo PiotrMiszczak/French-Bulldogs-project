@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Cherkasy Frenchies`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Welcome to Cherkasy Frenchies — where passion for the breed meets responsible, loving care. Nestled in the heart of Ukraine, in the beautiful city of Cherkasy, our kennel is devoted to raising healthy, happy French Bulldogs who brighten lives with their spirited personalities and gentle hearts`,
+    author: `Piotr Miszczak`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [

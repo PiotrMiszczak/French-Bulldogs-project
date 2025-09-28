@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import LocaleButton from "./localeButton"
-import { useIntl} from "gatsby-plugin-intl"
+import { useIntl } from "gatsby-plugin-intl"
+
 
 function Header({ siteTitle }) {
   const [menu, setMenu] = useState(false)
-  const intl = useIntl();
-  const defaultTitle=intl.formatMessage({ id: "defaultTitle" })
+const intl = useIntl()
+  
 
   function handleClick() {
     setMenu(!menu)
@@ -16,11 +17,11 @@ function Header({ siteTitle }) {
   return (
     <header className="header">
       <Link className="link" to="/">
-        <h1 className="header__title">{defaultTitle}</h1>
+        <h1 className="header__title">{siteTitle}</h1>
       </Link>
       <nav className="navigation">
         <Link to="/dogs" className="navigation__link link">
-          Dogs
+          {intl.formatMessage({ id: "navigationDogs" })}
           <svg
             className="link__graphic link__graphic--stroke link__graphic--arc"
             width="100%"
@@ -33,20 +34,7 @@ function Header({ siteTitle }) {
             />
           </svg>
         </Link>
-        <Link to="/testimonials" className="navigation__link link">
-          Testimonials
-          <svg
-            className="link__graphic link__graphic--stroke link__graphic--arc"
-            width="100%"
-            height="18"
-            viewBox="0 0 59 18"
-          >
-            <path
-              d="M.945.149C12.3 16.142 43.573 22.572 58.785 10.842"
-              pathLength="1"
-            />
-          </svg>
-        </Link>
+        
         <LocaleButton />
       </nav>
       <button onClick={handleClick} className="navigation__button">
@@ -70,14 +58,10 @@ function Header({ siteTitle }) {
         <ul className="navigation__list">
           <li onClick={handleClick}>
             <Link to="/dogs" className="navigation__link link">
-              Dogs
+              {intl.formatMessage({ id: "navigationDogs" })}
             </Link>
           </li>
-          <li onClick={handleClick}>
-            <Link to="/testimonials" className="navigation__link link">
-              Testimonials
-            </Link>
-          </li>
+      
         </ul>
         <LocaleButton onClick={handleClick} />
       </nav>

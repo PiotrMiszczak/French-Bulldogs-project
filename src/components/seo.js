@@ -17,7 +17,7 @@ import { useIntl} from "gatsby-plugin-intl"
 
   
 
-function Seo({ description, lang, meta}) {
+function Seo({ description, lang, meta, title }) {
     const { site } = useStaticQuery(
         graphql `
       query {

@@ -122,8 +122,8 @@ function Form({ text }) {
             }
           >
             {feedback == "success"
-              ? "Your message has been sent succesfully ;)"
-              : "Oops, something went wrong. Contact us on social media"}
+              ? intl.formatMessage({ id: "formSuccess" })
+              : intl.formatMessage({ id: "formError" })}
           </span>
           <FeedbackSpinner visible={inProgress} />
         </form>
