@@ -35,7 +35,7 @@ function SliderComponent(){
           <StaticImage  className="hello__image" src="../images/dog1.jpg" alt="french bulldog" />
           </div>
           <div>
-          <StaticImage  className="hello__image" src="../images/hello2.jpg" alt="french bulldog" />
+          <StaticImage  className="hello__image" src="../images/hello2.jpeg" alt="french bulldog" />
           </div>
          
  </Slider>
