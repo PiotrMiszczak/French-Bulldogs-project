@@ -1,9 +1,12 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import LocaleButton from "./localeButton"
+import { useIntl} from "gatsby-plugin-intl"
 
 function Header({ siteTitle }) {
   const [menu, setMenu] = useState(false)
+  const intl = useIntl();
+  const defaultTitle=intl.formatMessage({ id: "defaultTitle" })
 
   function handleClick() {
     setMenu(!menu)
@@ -13,7 +16,7 @@ function Header({ siteTitle }) {
   return (
     <header className="header">
       <Link className="link" to="/">
-        <h1 className="header__title">{siteTitle}</h1>
+        <h1 className="header__title">{defaultTitle}</h1>
       </Link>
       <nav className="navigation">
         <Link to="/dogs" className="navigation__link link">

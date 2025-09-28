@@ -17,7 +17,7 @@ import { useIntl} from "gatsby-plugin-intl"
 
   
 
-function Seo({ description, lang, meta, title }) {
+function Seo({ description, lang, meta}) {
     const { site } = useStaticQuery(
         graphql `
       query {
@@ -42,7 +42,7 @@ function Seo({ description, lang, meta, title }) {
                 lang,
             }
         }
-        title = { title ? `${title} | ${defaultTitle}`:defaultTitle }
+        title = {defaultTitle ? defaultTitle : "Cherkasy Frenchies"}
         
         meta = {
             [{
@@ -51,7 +51,7 @@ function Seo({ description, lang, meta, title }) {
                 },
                 {
                     property: `og:title`,
-                    content: title,
+                    content: defaultTitle ? defaultTitle : "Cherkasy Frenchies",
                 },
                 {
                     property: `og:description`,
@@ -71,7 +71,7 @@ function Seo({ description, lang, meta, title }) {
                 },
                 {
                     name: `twitter:title`,
-                    content: title,
+                    content: defaultTitle ? defaultTitle : "Cherkasy Frenchies",
                 },
                 {
                     name: `twitter:description`,

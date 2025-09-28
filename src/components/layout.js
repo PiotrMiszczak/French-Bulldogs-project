@@ -15,6 +15,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import Header from "./header"
 import Footer from "./footer.js"
+import { useIntl} from "gatsby-plugin-intl"
+
 
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -26,13 +28,14 @@ function Layout({ children }) {
       }
     }
   `)
-  
+const intl = useIntl();
+const defaultTitle=intl.formatMessage({ id: "defaultTitle" })
 
   
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={defaultTitle} />
       <main>{children}</main>
       <Footer />
     </>

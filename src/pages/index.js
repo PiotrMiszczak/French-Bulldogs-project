@@ -5,6 +5,7 @@ import Hello from "../components/hello"
 import Offer from "../components/offer"
 import Form from "../components/form"
 import Gallery from "../components/gallery"
+import About from "../components/about"
 
 function IndexPage() {
   let textAreaValue = false
@@ -18,6 +19,7 @@ function IndexPage() {
     <Layout>
       <Seo />
       <Hello />
+      <About />
       <Offer />
 <Gallery />
       <Form text={textAreaValue} />
