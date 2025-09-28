@@ -3,17 +3,18 @@ import React, { useState, useLayoutEffect, useRef } from "react"
 import french from "../assets/french.svg"
 import axios from "axios"
 import qs from "qs"
+import { useIntl} from "gatsby-plugin-intl"
 
 
 
 function Form({ text }) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
-  const [timeFrame, setTimeFrame] = useState("asap")
   const [feedback, setFeedback] = useState("")
   const [inProgress, setInProgress] = useState(false)
   const feedbackRef = useRef()
   const textareaRef = useRef()
+  const intl = useIntl();
  
 
   //////////////////////API COMMUNICATION ////////////////////////////
@@ -41,7 +42,6 @@ function Form({ text }) {
     const mail = qs.stringify({
       name,
       email,
-      timeFrame,
       other: textareaRef.value
     })
     postRequest(mail,process.env.GATSBY_MAILSERVER_USER,process.env.GATSBY_MAILSERVER_PASSWORD)
@@ -70,9 +70,9 @@ function Form({ text }) {
       <div className="form__wrapper">
         <form id="form" className="form" onSubmit={sendMail}>
           <img className="form__icon" src={french} alt="french bulldog icon" />
-          <legend className="form__legend">Join our waitlist!</legend>
+          <legend className="form__legend">{intl.formatMessage({ id: "formHeader" })}</legend>
           <label className="form__label" htmlFor="name">
-            Your name:
+            {intl.formatMessage({ id: "formLabelName" })}
           </label>
           <input
             className="form__input"
@@ -84,7 +84,7 @@ function Form({ text }) {
             required
           />
           <label className="form__label" htmlFor="email">
-            Email:
+            {intl.formatMessage({ id: "formLabelEmail" })}
           </label>
           <input
             className="form__input"
@@ -95,24 +95,9 @@ function Form({ text }) {
             onChange={event => setEmail(event.target.value)}
             required
           />
-          <label className="form__label" htmlFor="timeFrame">
-            When are you looking to Adopt?
-          </label>
-          <select
-            className="form__input"
-            name="timeFrame"
-            id="timeFrame"
-            value={timeFrame}
-            onChange={event => setTimeFrame(event.target.value)}
-            required
-          >
-            <option value="asap">As soon as possible</option>
-            <option value="1-6 months">1-6 months</option>
-            <option value="6-12 months">6-12 months</option>
-            <option value="year+">year+</option>
-          </select>
+          
           <label className="form__label" htmlFor="other">
-            Any other information you want to share:
+            {intl.formatMessage({ id: "formLabelInformation" })}
           </label>
           <textarea
           ref={textareaRef}
@@ -124,7 +109,7 @@ function Form({ text }) {
           />
 
           <button className="form__button" type="submit">
-            Send
+            {intl.formatMessage({ id: "formSend" })}
           </button>
           <span
             ref={feedbackRef}

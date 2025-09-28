@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 import Slider from "react-slick";
 import {StaticImage} from "gatsby-plugin-image"
-
+import { useIntl} from "gatsby-plugin-intl"
 
 function SliderComponent(){
     
@@ -19,7 +19,8 @@ function SliderComponent(){
         slidesToScroll: 1,
         
       };
-      
+    const intl = useIntl()
+    
   
     return(
         <div className="hello">
@@ -35,10 +36,10 @@ function SliderComponent(){
  <div className="hello__mask">
  </div>
  <div className="hello__content">
-   <h2 className="hello__content-heading">French Bulldogs</h2>
-   <p className="hello__content-text">Welcome to Cherkasy Frenchies — where passion for the breed meets responsible, loving care. Nestled in the heart of Ukraine, in the beautiful city of Cherkasy, our kennel is devoted to raising healthy, happy French Bulldogs who brighten lives with their spirited personalities and gentle hearts.</p>
+   <h2 className="hello__content-heading">{intl.formatMessage({ id: "defaultTitle" })}</h2>
+   <p className="hello__content-text">{intl.formatMessage({ id: "helloContent" })}</p>
    
-   <Link to="#form"><button className="hello__content-button">GET PUPPY !</button></Link>
+   <Link to="dogs"><button className="hello__content-button">{intl.formatMessage({ id: "getPuppyButton" })}</button></Link>
  </div>
 
 

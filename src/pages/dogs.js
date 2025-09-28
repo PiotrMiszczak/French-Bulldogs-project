@@ -14,9 +14,7 @@ function DogsPage() {
   const handleClick = name => {
     navigate(`/${lang}/#name`, {
       state: {
-        message: `Hello,
-        
-I'm intrested in purchasing ${name}. I'm looking forward to our contact and getting more information.`,
+        message: intl.formatMessage({ id: "formTemplateMessage" }).replace("${name}",name),
       },
     })
 
@@ -29,66 +27,24 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
     <Layout>
       <Seo title="Dogs" />
       <section className="dogs">
-        <section>
-          <h2 className="dogs__heading">Parents</h2>
-          <article className="dogs__article">
-            <StaticImage
-              className="dogs__image"
-              objectPosition={"50% 50%"}
-              src="../images/dog2.jpg"
-            />
-            <div className="dogs__info">
-              <div className="dogs__info-decoration"></div>
-              <span className="dogs__name">Fedor</span>
-              <span className="dogs__breed">Cutie patuti deluxe</span>
-              <div className="dogs__info-decoration"></div>
-            </div>
-            <div className="dogs__details">
-              <p className="dogs__text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </article>
-          <article className="dogs__article">
-            <StaticImage className="dogs__image" src="../images/dog2.jpg" />
-            <div className="dogs__info">
-              <div className="dogs__info-decoration"></div>
-              <span className=" dogs__name dogs__name-female">Fedorina</span>
-              <span className="dogs__breed">Cutie patuti deluxe</span>
-              <div className="dogs__info-decoration"></div>
-            </div>
-            <div className="dogs__details">
-              <p className="dogs__text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </article>
-          <h2 className="dogs__heading">Puppies</h2>
+        <section>    
+          <h2 className="section__header">{intl.formatMessage({ id: "dogHeader" })}</h2>
           <article className="dogs__article">
             <StaticImage className="dogs__image" src="../images/dog2.jpg" />
             <div className="dogs__info dogs__info-puppy">
               <div className="dogs__info-decoration"></div>
-              <span className="dogs__name">Fedor</span>
-              <span className="dogs__price">100 000$</span>
+              <span className="dogs__name">{intl.formatMessage({ id: "dogName1" })}</span>
+              <span className="dogs__price">{intl.formatMessage({ id: "dogPrice1" })}</span>
               <button
                 className="dogs__button"
-                onClick={e => handleClick("Fedor")}
+                onClick={e => handleClick(intl.formatMessage({ id: "dogName1" }))}
               >
                 I'm interested
               </button>
             </div>
             <div className="dogs__details">
               <p className="dogs__text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+               {intl.formatMessage({ id: "dogDescription1" })}
               </p>
             </div>
           </article>
@@ -96,21 +52,75 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
             <StaticImage className="dogs__image" src="../images/dog2.jpg" />
             <div className="dogs__info dogs__info-puppy">
               <div className="dogs__info-decoration"></div>
-              <span className="dogs__name">Waldek</span>
-              <span className="dogs__price">1000$</span>
+              <span className="dogs__name">{intl.formatMessage({ id: "dogName2" })}</span>
+              <span className="dogs__price">{intl.formatMessage({ id: "dogPrice2" })}</span>
               <button
                 className="dogs__button"
-                onClick={e => handleClick("Waldek")}
+                onClick={e => handleClick(intl.formatMessage({ id: "dogName2" }))}
               >
                 I'm interested
               </button>
             </div>
             <div className="dogs__details">
               <p className="dogs__text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+               {intl.formatMessage({ id: "dogDescription2" })}
+              </p>
+            </div>
+          </article>
+           <article className="dogs__article">
+            <StaticImage className="dogs__image" src="../images/dog2.jpg" />
+            <div className="dogs__info dogs__info-puppy">
+              <div className="dogs__info-decoration"></div>
+              <span className="dogs__name">{intl.formatMessage({ id: "dogName3" })}</span>
+              <span className="dogs__price">{intl.formatMessage({ id: "dogPrice3" })}</span>
+              <button
+                className="dogs__button"
+                onClick={e => handleClick(intl.formatMessage({ id: "dogName3" }))}
+              >
+                I'm interested
+              </button>
+            </div>
+            <div className="dogs__details">
+              <p className="dogs__text">
+               {intl.formatMessage({ id: "dogDescription3" })}
+              </p>
+            </div>
+          </article>
+           <article className="dogs__article">
+            <StaticImage className="dogs__image" src="../images/dog2.jpg" />
+            <div className="dogs__info dogs__info-puppy">
+              <div className="dogs__info-decoration"></div>
+              <span className="dogs__name">{intl.formatMessage({ id: "dogName4" })}</span>
+              <span className="dogs__price">{intl.formatMessage({ id: "dogPrice4" })}</span>
+              <button
+                className="dogs__button"
+                onClick={e => handleClick(intl.formatMessage({ id: "dogName4" }))}
+              >
+                I'm interested
+              </button>
+            </div>
+            <div className="dogs__details">
+              <p className="dogs__text">
+               {intl.formatMessage({ id: "dogDescription4" })}
+              </p>
+            </div>
+          </article>
+           <article className="dogs__article">
+            <StaticImage className="dogs__image" src="../images/dog2.jpg" />
+            <div className="dogs__info dogs__info-puppy">
+              <div className="dogs__info-decoration"></div>
+              <span className="dogs__name">{intl.formatMessage({ id: "dogName5" })}</span>
+              <span className="dogs__price">{intl.formatMessage({ id: "dogPrice5" })}</span>
+              <button
+                className="dogs__button"
+                onClick={e => handleClick(intl.formatMessage({ id: "dogName5" }))}
+              >
+                I'm interested
+              </button>
+            </div>
+            <div className="dogs__details">
+              <p className="dogs__text">
+               {intl.formatMessage({ id: "dogDescription5" })}
               </p>
             </div>
           </article>

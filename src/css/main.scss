@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 @mixin button {
@@ -43,15 +42,28 @@ html {
   @media (max-width: $screen-M) {
     font-size: 16px;
   }
-  @media (max-width: $screen-S) {
-    font-size: 14px;
-  }
+ 
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+.about{
+  @media (min-width: $screen-XS) {
+      display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    margin: .5rem;
+    line-height: 3rem;
+    font-weight: lighter;
 }
 .stop-scrolling {
   height: 100vh;
@@ -71,7 +83,9 @@ html {
   &__title {
     margin: 0;
     color: white;
-    font-family: "Satisfy";
+    font-family: "Amatic SC";
+    font-size: 3rem;
+    
   }
 }
 .navigation {
@@ -249,7 +263,7 @@ html {
     z-index: 100;
     &-heading {
       margin-bottom: 1rem;
-      font-size: 4rem;
+      font-size: 3.5rem;
       @media (max-width: $screen-S) {
         margin-top: 0.5rem;
       }
@@ -264,8 +278,11 @@ html {
       display: inline-block;
       width: 8rem;
       height: 3rem;
-
       margin-right: 1rem;
+      @media (max-width: $screen-XS) {
+      height: 5rem;
+      width: 15rem;
+    }
     }
   }
   &-modal {
@@ -284,7 +301,7 @@ html {
   color: black;
   background-color: $mainLighter;
   &__item {
-    flex-basis: 300px;
+    flex-basis: 400px;
     margin: 0.5rem;
     padding: 1rem;
     background-color: rgb(236, 230, 230);
@@ -295,6 +312,7 @@ html {
     margin: 0 auto;
     text-align: center;
     letter-spacing: 2px;
+    font-size: 1.5rem;
     & span {
       letter-spacing: 4px;
       font-style: italic;
@@ -305,6 +323,7 @@ html {
     height: 200px;
   }
   &__text {
+    font-size: 1rem;
     text-align: center;
     font-weight: bolder;
   }
@@ -392,11 +411,19 @@ html {
     align-self: center;
   }
 }
+.section__header{
+  font-family: "Amatic SC";
+    font-size: 4rem;
+    letter-spacing: 4px;
+    text-align: center;
+
+    margin-bottom: 2rem;
+}
 .dogs {
   display: block;
   color: white;
   &__heading {
-    font-family: "Satisfy";
+    font-family: "Amatic SC";
     font-size: 2.5rem;
     letter-spacing: 4px;
     text-align: center;
@@ -407,7 +434,7 @@ html {
     display: flex;
     flex-direction: row;
     padding-right: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
     @media (max-width: $screen-XL) {
       flex-direction: column;
       align-items: center;
@@ -531,7 +558,7 @@ html {
     }
     &-heading {
       text-align: center;
-      font-family: "Satisfy";
+      font-family: "Amatic SC";
 
       font-size: 2rem;
       letter-spacing: 2px;
@@ -572,8 +599,8 @@ html {
     }
   }
   &__heading {
-    font-family: "Satisfy";
-    font-size: 1.5rem;
+    font-family: "Amatic SC";
+    font-size: 2rem;
     font-weight: bold;
   }
   &__socials {
