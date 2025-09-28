@@ -26,10 +26,16 @@ function SliderComponent(){
         <div className="hello">
         <Slider className="hello__slider" {...settings}>
           <div>
-            <StaticImage className="hello__image" src="../images/dog22.jpg" alt="french bulldog" />
+            <StaticImage className="hello__image" src="../images/gallery5.jpeg" alt="french bulldog" />
+          </div>
+          <div>
+          <StaticImage  className="hello__image" src="../images/hello1.jpg" alt="french bulldog" />
           </div>
           <div>
           <StaticImage  className="hello__image" src="../images/dog1.jpg" alt="french bulldog" />
+          </div>
+          <div>
+          <StaticImage  className="hello__image" src="../images/hello2.jpg" alt="french bulldog" />
           </div>
          
  </Slider>

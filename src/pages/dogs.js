@@ -12,11 +12,12 @@ function DogsPage() {
   const { locale: lang} = intl
 
   const handleClick = name => {
-    navigate(`/${lang}/#name`, {
+    navigate(`/${lang}/#footer`, {
       state: {
         message: intl.formatMessage({ id: "formTemplateMessage" }).replace("${name}",name),
       },
     })
+    window.scrollTo(0, document.body.scrollHeight);
 
     /*navigate("/#form",{state: {message:`Hello,
         
@@ -39,7 +40,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
                 className="dogs__button"
                 onClick={e => handleClick(intl.formatMessage({ id: "dogName1" }))}
               >
-                I'm interested
+               {intl.formatMessage({ id: "dogInterestedButton" })}
               </button>
             </div>
             <div className="dogs__details">
@@ -58,7 +59,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
                 className="dogs__button"
                 onClick={e => handleClick(intl.formatMessage({ id: "dogName2" }))}
               >
-                I'm interested
+               {intl.formatMessage({ id: "dogInterestedButton" })}
               </button>
             </div>
             <div className="dogs__details">
@@ -77,7 +78,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
                 className="dogs__button"
                 onClick={e => handleClick(intl.formatMessage({ id: "dogName3" }))}
               >
-                I'm interested
+               {intl.formatMessage({ id: "dogInterestedButton" })}
               </button>
             </div>
             <div className="dogs__details">
@@ -96,7 +97,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
                 className="dogs__button"
                 onClick={e => handleClick(intl.formatMessage({ id: "dogName4" }))}
               >
-                I'm interested
+               {intl.formatMessage({ id: "dogInterestedButton" })}
               </button>
             </div>
             <div className="dogs__details">
@@ -115,7 +116,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
                 className="dogs__button"
                 onClick={e => handleClick(intl.formatMessage({ id: "dogName5" }))}
               >
-                I'm interested
+               {intl.formatMessage({ id: "dogInterestedButton" })}
               </button>
             </div>
             <div className="dogs__details">

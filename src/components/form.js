@@ -108,7 +108,7 @@ function Form({ text }) {
             
           />
 
-          <button className="form__button" type="submit">
+          <button className="form__button" type="submit"  id="sendMessage">
             {intl.formatMessage({ id: "formSend" })}
           </button>
           <span

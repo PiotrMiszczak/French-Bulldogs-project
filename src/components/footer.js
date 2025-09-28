@@ -1,20 +1,23 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import facebookIcon from "../assets/Vector.svg"
-import instagramIcon from "../assets/Vector (1).svg"
+import facebookIcon from "../assets/fb.svg"
+import instagramIcon from "../assets/insta.svg"
+import tiktokIcon from "../assets/tiktok.svg"
 
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer__container footer__container-top">
-        <span className="footer__heading">Cherkasy Frenchies</span>
+        <span className="footer__heading">Angel Dogs</span>
         <div className="footer__socials">
           <a href="#" className="footer__socials-link">
             <img alt="facebook icon" src={facebookIcon}></img>
           </a>
           <a href="#" className="footer__socials-link">
             <img alt="facebook icon" src={instagramIcon}></img>
+          </a>
+          <a href="#" className="footer__socials-link">
+            <img alt="tiktok icon" src={tiktokIcon}></img>
           </a>
         </div>
       </div>

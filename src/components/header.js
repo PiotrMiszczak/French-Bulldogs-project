@@ -63,7 +63,7 @@ const intl = useIntl()
           </li>
       
         </ul>
-        <LocaleButton onClick={handleClick} />
+        <LocaleButton />
       </nav>
     </header>
   )

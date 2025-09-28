@@ -1,5 +1,5 @@
 {
-    "defaultTitle":"Cherkasy Frenchies",
+    "defaultTitle":"Angel Dogs",
     "helloContent":"Welcome to Cherkasy Frenchies — where passion for the breed meets responsible, loving care. Nestled in the heart of Ukraine, in the beautiful city of Cherkasy, our kennel is devoted to raising healthy, happy French Bulldogs who brighten lives with their spirited personalities and gentle hearts.",
     "getPuppyButton":"Get puppy!",
     "navigationDogs":"Puppies",
@@ -26,18 +26,18 @@
     "dogName1":"Albus",
     "dogPrice1":"1000$",
     "dogName2":"Sherlock",
-    "dogPrice2":"1000$",
+    "dogPrice2":"1500$",
     "dogName3":"Alaska",
     "dogPrice3":"1000$",
     "dogName4":"Skyler",
-    "dogPrice4":"1000$",
+    "dogPrice4":"1500$",
     "dogName5":"Walter",
     "dogPrice5":"1000$",
-    "dogDescription1":"Friendly male/female. Born 10/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport.",
-    "dogDescription2":"Friendly male/female. Born 10/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport.",
-    "dogDescription3":"Friendly male/female. Born 10/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport.",
-    "dogDescription4":"Friendly male/female. Born 10/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport.",
-    "dogDescription5":"Friendly male/female. Born 10/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport."
+    "dogDescription1":"Friendly male. Born 10/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport.",
+    "dogDescription2":"Friendly male. Born 25/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport.",
+    "dogDescription3":"Friendly female. Born 28/08/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport.",
+    "dogDescription4":"Friendly female. Born 25/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport.",
+    "dogDescription5":"Friendly male. Born 10/09/2025, ready to travel 01/12/2025. Will have age-appropriate vaccines, chip and a passport."
 
 
 }

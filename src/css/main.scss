@@ -64,6 +64,9 @@ html {
     margin: .5rem;
     line-height: 3rem;
     font-weight: lighter;
+    & p{
+      text-align: center;
+    }
 }
 .stop-scrolling {
   height: 100vh;
@@ -505,7 +508,7 @@ html {
   }
   &__button {
     @include button;
-    width: 8rem;
+    width: 9rem;
     height: 3rem;
     margin-bottom: 2rem;
   }
@@ -522,6 +525,7 @@ html {
     text-align: center;
     font-size: 3rem;
     letter-spacing: 3px;
+    font-family:"Amatic SC" ;
   }
 }
 
@@ -587,6 +591,9 @@ html {
     justify-content: space-between;
     align-items: center;
     padding-left: 6rem;
+      @media (max-width: $screen-S) {
+        padding-left: 2rem;
+      }
     &-top {
       border-bottom: 1px solid #ffffff1c;
       padding-bottom: 1.5rem;

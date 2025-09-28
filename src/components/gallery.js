@@ -1,14 +1,14 @@
-import * as React from "react"
-import ImageGallery from "react-image-gallery";
-import gallery1 from "../assets/gallery1.jpg"
-import gallery2 from "../assets/gallery2.jpg"
-import gallery3 from "../assets/gallery3.jpg"
-import gallery4 from "../assets/gallery4.jpg"
-import gallery5 from "../assets/gallery5.jpg"
-import gallery6 from "../assets/gallery6.jpg"
-import gallery7 from "../assets/gallery7.jpg"
-import gallery8 from "../assets/gallery8.jpg"
-import gallery9 from "../assets/gallery9.jpg"
+import React from "react"
+import ImageGallery from "react-image-gallery"
+import gallery1 from "../images/gallery1.jpg"
+import gallery2 from "../images/gallery2.jpg"
+import gallery3 from "../images/gallery3.jpg"
+import gallery4 from "../images/gallery4.jpg"
+import gallery5 from "../images/gallery5.jpeg"
+import gallery6 from "../images/gallery6.jpg"
+import gallery7 from "../images/gallery7.jpg"
+import gallery8 from "../images/gallery8.jpg"
+import gallery9 from "../images/gallery9.jpg"
 
 
 function gallery(){
@@ -58,13 +58,13 @@ function gallery(){
          original:gallery9,
          thumbnail:gallery9,
          thumbnailWidth:"50px"
-        },
+        }
     ]
 
     return(
      
      <section className="gallery">
-     <h2 className="gallery_header">Gallery</h2>
+   
         <ImageGallery items={photos}/>
         
         

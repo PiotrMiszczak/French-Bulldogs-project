@@ -8,10 +8,22 @@ function LocaleButton() {
   const { locale: lang } = intl
   console.log(lang)
 
+  function handleClick(){
+    if(document.body.classList.contains("stop-scrolling")){
+      document.body.classList.remove("stop-scrolling")
+    }
+    if(lang=="ua"){
+changeLocale("en")
+    }
+    else{
+changeLocale("ua")
+    }
+  }
+
   return (
     <button
       onClick={
-        lang == "ua" ? () => changeLocale("en") : () => changeLocale("ua")
+        handleClick
       }
       className="navigation__language"
     >
