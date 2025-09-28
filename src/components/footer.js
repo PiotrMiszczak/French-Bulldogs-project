@@ -10,13 +10,11 @@ const Footer = () => {
       <div className="footer__container footer__container-top">
         <span className="footer__heading">Angel Dogs</span>
         <div className="footer__socials">
-          <a href="#" className="footer__socials-link">
-            <img alt="facebook icon" src={facebookIcon}></img>
+          
+          <a href="https://www.instagram.com/angelova_liliya/" className="footer__socials-link">
+            <img alt="instagram icon" src={instagramIcon}></img>
           </a>
-          <a href="#" className="footer__socials-link">
-            <img alt="facebook icon" src={instagramIcon}></img>
-          </a>
-          <a href="#" className="footer__socials-link">
+          <a href="https://www.tiktok.com/@angelova_liliya?_t=ZN-906w7tMhs1O&_r=1" className="footer__socials-link">
             <img alt="tiktok icon" src={tiktokIcon}></img>
           </a>
         </div>
