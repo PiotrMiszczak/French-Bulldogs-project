@@ -31,7 +31,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
         <section>    
           <h2 className="section__header">{intl.formatMessage({ id: "dogHeader" })}</h2>
           <article className="dogs__article">
-            <StaticImage alt="French bulldog puppy" className="dogs__image" src="../images/puppy1.jpg" />
+            <StaticImage loading="eager" alt="French bulldog puppy" className="dogs__image" src="../images/puppy1.jpg" />
             <div className="dogs__info dogs__info-puppy">
               <div className="dogs__info-decoration"></div>
               <span className="dogs__name">{intl.formatMessage({ id: "dogName1" })}</span>
@@ -50,7 +50,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
             </div>
           </article>
           <article className="dogs__article">
-            <StaticImage alt="French bulldog puppy" className="dogs__image" src="../images/puppy2.jpg" />
+            <StaticImage loading="eager" alt="French bulldog puppy" className="dogs__image" src="../images/puppy2.jpg" />
             <div className="dogs__info dogs__info-puppy">
               <div className="dogs__info-decoration"></div>
               <span className="dogs__name">{intl.formatMessage({ id: "dogName2" })}</span>
@@ -69,7 +69,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
             </div>
           </article>
            <article className="dogs__article">
-            <StaticImage alt="French bulldog puppy" className="dogs__image" src="../images/puppy3.jpg" />
+            <StaticImage loading="lazy" alt="French bulldog puppy" className="dogs__image" src="../images/puppy3.jpg" />
             <div className="dogs__info dogs__info-puppy">
               <div className="dogs__info-decoration"></div>
               <span className="dogs__name dogs__name-female">{intl.formatMessage({ id: "dogName3" })}</span>
@@ -88,7 +88,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
             </div>
           </article>
            <article className="dogs__article">
-            <StaticImage alt="French bulldog puppy" className="dogs__image" src="../images/puppy4.jpg" />
+            <StaticImage loading="lazy" alt="French bulldog puppy" className="dogs__image" src="../images/puppy4.jpg" />
             <div className="dogs__info dogs__info-puppy">
               <div className="dogs__info-decoration"></div>
               <span className="dogs__name dogs__name-female">{intl.formatMessage({ id: "dogName4" })}</span>
@@ -107,7 +107,7 @@ I'm intrested in purchasing ${dogName}. I'm looking forward to our contact and g
             </div>
           </article>
            <article className="dogs__article">
-            <StaticImage alt="French bulldog puppy" className="dogs__image" src="../images/puppy5.jpg" />
+            <StaticImage loading="lazy" alt="French bulldog puppy" className="dogs__image" src="../images/puppy5.jpg" />
             <div className="dogs__info dogs__info-puppy">
               <div className="dogs__info-decoration"></div>
               <span className="dogs__name">{intl.formatMessage({ id: "dogName5" })}</span>

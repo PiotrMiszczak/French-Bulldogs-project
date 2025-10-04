@@ -14,28 +14,28 @@ function Offer(){
           <div className="offer__content"></div>
           
           <h3 className="offer__heading">{intl.formatMessage({ id: "offer1Header" })}</h3>
-          <img className="offer__icon" src={peace}/>
+          <img alt="woman medidating" className="offer__icon" src={peace}/>
           <p className="offer__text">{intl.formatMessage({ id: "offer1Content" })}</p>
       </article>
       <article className="offer__item">
           <div className="offer__content"></div>
           
         <h3 className="offer__heading">{intl.formatMessage({ id: "offer2Header" })}</h3>
-          <img className="offer__icon" src={health}/>
+          <img alt="doctors talking" className="offer__icon" src={health}/>
           <p className="offer__text">{intl.formatMessage({ id: "offer2Content" })}</p>
       </article>
       <article className="offer__item">
           <div className="offer__content"></div>
           
          <h3 className="offer__heading">{intl.formatMessage({ id: "offer3Header" })}</h3>
-          <img className="offer__icon" src={travel}/>
+          <img alt="plane flying" className="offer__icon" src={travel}/>
          <p className="offer__text">{intl.formatMessage({ id: "offer3Content" })}</p>
       </article>
       <article className="offer__item">
           <div className="offer__content"></div>
           
          <h3 className="offer__heading">{intl.formatMessage({ id: "offer4Header" })}</h3>
-          <img className="offer__icon" src={support}/>
+          <img alt="conversation icon" className="offer__icon" src={support}/>
          <p className="offer__text">{intl.formatMessage({ id: "offer4Content" })}</p>
       </article>
    
