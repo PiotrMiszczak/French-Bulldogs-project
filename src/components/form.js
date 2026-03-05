@@ -3,6 +3,7 @@ import React, { useState, useLayoutEffect, useRef } from "react"
 import french from "../assets/french.svg"
 import axios from "axios"
 import qs from "qs"
+//import https from "node"
 import { useIntl} from "gatsby-plugin-intl"
 
 
@@ -11,9 +12,10 @@ function Form({ text }) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [feedback, setFeedback] = useState("")
+  const [textarea, setTextArea] = useState(text)
   const [inProgress, setInProgress] = useState(false)
   const feedbackRef = useRef()
-  const textareaRef = useRef()
+  
   const intl = useIntl();
  
 
@@ -21,14 +23,24 @@ function Form({ text }) {
   const postRequest = async (message,username,password) => {
     try {
       setInProgress(true)
-      
+       //const httpsAgent = new https.Agent({ rejectUnauthorized: false });
       const authString = username+":"+password
       const authBase64 = btoa(authString);
+      console.log("tutaj")
+      const serverUrl = process.env.GATSBY_MAILSERVER_ENDPOINT;
+console.log(serverUrl)
+const headers = {
+  'Content-Type': 'application/json;charset=utf-8',
+  'Authorization': "Basic "+authBase64,
+  'Charset':"utf-8"
+}
+
 
       const resp = await axios.post(
-        process.env.GATSBY_MAILSERVER_ENDPOINT,
-        message,{headers:{Authorization:"Basic "+authBase64}}
+        serverUrl,
+        message,{headers:headers}
       )
+      console.log(resp)
       resp.status == 200 ? setFeedback("success") : setFeedback("error")
       setInProgress(false)
     } catch (err) {
@@ -39,11 +51,15 @@ function Form({ text }) {
 
   const sendMail = e => {
     e.preventDefault()
-    const mail = qs.stringify({
+    console.log("tekst: "+textarea)
+    const mail = {
       name,
       email,
-      other: textareaRef.value
-    })
+      other: textarea
+    
+    }
+    
+    console.log("mail: "+mail)
     postRequest(mail,process.env.GATSBY_MAILSERVER_USER,process.env.GATSBY_MAILSERVER_PASSWORD)
   }
   //////////////////////FEEDBACK ANIMATION////////////////////////////
@@ -100,11 +116,12 @@ function Form({ text }) {
             {intl.formatMessage({ id: "formLabelInformation" })}
           </label>
           <textarea
-          ref={textareaRef}
+          
             defaultValue={text ? text : ""}
             className="form__input form__input-textarea"
             name="other"
             id="other"
+            onChange={event => setTextArea(event.target.value)}
             
           />
 

@@ -3,12 +3,13 @@ module.exports = {
     title: `Angel Dogs`,
     description: `Welcome to Angel Dogs — where passion for the breed meets responsible, loving care. Nestled in the heart of Ukraine, in the beautiful city of Cherkasy, our kennel is devoted to raising healthy, happy French Bulldogs who brighten lives with their spirited personalities and gentle hearts`,
     author: `Piotr Miszczak`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://cherkasybulldogs.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     
     
     {
