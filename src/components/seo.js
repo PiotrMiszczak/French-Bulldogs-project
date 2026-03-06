@@ -77,6 +77,10 @@ function Seo({ description, lang, meta, title }) {
                     name: `twitter:description`,
                     content: metaDescription,
                 },
+                {
+                    name: `google-site-verification`,
+                    content: `a6vzHRANP6XoUedMAXT09IPjMp2Qzc2_JWMTlBkAoFY`,
+                },
             ].concat(meta)
         }
         />
@@ -97,3 +101,4 @@ Seo.propTypes = {
 }
 
 export default Seo
+
