@@ -26,9 +26,7 @@ function Form({ text }) {
        //const httpsAgent = new https.Agent({ rejectUnauthorized: false });
       const authString = username+":"+password
       const authBase64 = btoa(authString);
-      console.log("tutaj")
       const serverUrl = process.env.GATSBY_MAILSERVER_ENDPOINT;
-console.log(serverUrl)
 const headers = {
   'Content-Type': 'application/json;charset=utf-8',
   'Authorization': "Basic "+authBase64,
@@ -40,7 +38,7 @@ const headers = {
         serverUrl,
         message,{headers:headers}
       )
-      console.log(resp)
+     
       resp.status == 200 ? setFeedback("success") : setFeedback("error")
       setInProgress(false)
     } catch (err) {
@@ -51,7 +49,7 @@ const headers = {
 
   const sendMail = e => {
     e.preventDefault()
-    console.log("tekst: "+textarea)
+   
     const mail = {
       name,
       email,
@@ -59,8 +57,8 @@ const headers = {
     
     }
     
-    console.log("mail: "+mail)
-    postRequest(mail,process.env.GATSBY_MAILSERVER_USER,process.env.GATSBY_MAILSERVER_PASSWORD)
+    
+    postRequest(mail,process.env.GATSBY_MAILSERVER_USER,process.env.MAILSERVER_PASSWORD)
   }
   //////////////////////FEEDBACK ANIMATION////////////////////////////
   useLayoutEffect(() => {
