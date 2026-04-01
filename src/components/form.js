@@ -27,6 +27,7 @@ function Form({ text }) {
       const authString = username+":"+password
       const authBase64 = btoa(authString);
       const serverUrl = process.env.GATSBY_MAILSERVER_ENDPOINT;
+      console.log(process.env.MAILSERVER_PASSWORD);
       console.log(authString);
 const headers = {
   'Content-Type': 'application/json;charset=utf-8',
