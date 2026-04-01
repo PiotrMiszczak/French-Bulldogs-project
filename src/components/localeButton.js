@@ -6,7 +6,7 @@ import ua from "../assets/ua.svg"
 function LocaleButton() {
   const intl = useIntl()
   const { locale: lang } = intl
-  console.log(lang)
+ 
 
   function handleClick(){
     if(document.body.classList.contains("stop-scrolling")){

@@ -27,8 +27,7 @@ function Form({ text }) {
       const authString = username+":"+password
       const authBase64 = btoa(authString);
       const serverUrl = process.env.GATSBY_MAILSERVER_ENDPOINT;
-      console.log(process.env.MAILSERVER_PASSWORD);
-      console.log(authString);
+     
 const headers = {
   'Content-Type': 'application/json;charset=utf-8',
   'Authorization': "Basic "+authBase64,
@@ -60,7 +59,7 @@ const headers = {
     }
     
     
-    postRequest(mail,process.env.GATSBY_MAILSERVER_USER,process.env.MAILSERVER_PASSWORD)
+    postRequest(mail,process.env.GATSBY_MAILSERVER_USER,process.env.GATSBY_MAILSERVER_PASSWORD)
   }
   //////////////////////FEEDBACK ANIMATION////////////////////////////
   useLayoutEffect(() => {
